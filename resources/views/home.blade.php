@@ -116,7 +116,7 @@
             @if(isset($menu->offer_price))
               <a href="{{route('menu.show',$menu)}}">{{$menu->name}}</a><span><s class="text-danger">{{$menu->price}}</s> {{$menu->offer_price}} ريال </span>
             @else
-              <a href="#">{{$menu->name}}</a><span>{{$menu->price}}ريال</span>
+              <a href="{{route('menu.show',$menu)}}">{{$menu->name}}</a><span>{{$menu->price}}ريال</span>
             @endif
           </div>
           <div class="menu-ingredients">
