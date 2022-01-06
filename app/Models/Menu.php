@@ -15,7 +15,8 @@ class Menu extends Model
         'calories',
         'available',
         'user_id',
-        'category_id'
+        'category_id',
+        'img_url'
     ]; 
 
 

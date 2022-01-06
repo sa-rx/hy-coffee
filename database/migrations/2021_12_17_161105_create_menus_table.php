@@ -23,7 +23,7 @@ class CreateMenusTable extends Migration
             $table->unsignedInteger('offer_price')->nullable();
             $table->unsignedInteger('calories')->nullable();
             $table->unsignedTinyInteger('available')->default(1);
-            $table->string('img')->nullable();
+            $table->text('img_url')->nullable();
 
 
             $table->unsignedBigInteger('user_id')->nullable();

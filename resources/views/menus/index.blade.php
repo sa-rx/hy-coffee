@@ -9,7 +9,8 @@
     <table style="--bs-table-hover-color: #d8a781 ;     border-color: #1e252c00;" class="table section-bg rounded table-responsive-xxl table-hover  text-light ">
         <thead  class="">
             <tr>
-            
+
+            <th scope="col">الصوره</th>
             <th scope="col">الاسم</th>
             <th scope="col " >السعر</th>
             
@@ -25,6 +26,8 @@
         <tbody>
             @forelse($menus as $menu)
                 <tr>
+                    <td ><img style="width: 54px;" src="{{$menu->img_url}}" class="menu-img" alt=""></td>
+
                     <td ><a class="text-light" href="{{route('menu.show',$menu)}}">{{$menu->name}}</a></td>
 
                     @if(isset($menu->offer_price))
