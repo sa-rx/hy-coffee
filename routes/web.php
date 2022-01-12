@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('controls', [App\Http\Controllers\ControlPanelController::class, 'index'])->name('controls.index');
 
+Route::get('addToCart/{menu}', [App\Http\Controllers\MenuController::class, 'addToCart'])->name('cart.add');
+Route::get('shopping-cart', [App\Http\Controllers\MenuController::class, 'showCart'])->name('cart.show');
+
 
 //Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles','App\Http\Controllers\RoleController');

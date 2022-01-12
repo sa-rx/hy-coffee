@@ -6,6 +6,8 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\User;
+use App\Models\Cart;
+
 use Illuminate\Support\Facades\Auth;
 
 
@@ -123,7 +125,46 @@ class MenuController extends Controller
     {
         $menu->delete();
         return redirect()->to('menu')->with('message','تم حذف الصنف بنجاح');
-
-
     }
+
+
+
+
+    public function addToCart(Menu $menu)
+    {
+
+
+
+       if(session()->has('cart')) {
+           $cart = new Cart(session()->get('cart'));
+       }else{
+            $cart = new Cart();
+       }
+
+       $cart->add($menu);
+
+       //dd($cart);
+
+       session()->put('cart', $cart);
+       return redirect()->back()->with('message','تم اضافة الصنف الى السله');
+    }
+
+
+    public function showCart()
+    {
+        if(session()->has('cart')){
+            $cart = new Cart(session()->get('cart'));
+        }else{
+            $cart =  null;
+        }
+
+
+        return view('cart.show', compact('cart'));
+
+
+        
+    }
+
+
+
 }

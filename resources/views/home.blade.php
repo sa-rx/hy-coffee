@@ -120,6 +120,7 @@
             @endif
           </div>
           <div class="menu-ingredients">
+            <a href="{{route('cart.add',$menu->id)}}" class="btn btn-danger"> bay</a>
             @if($menu->available == 0)
               <p>غير متوفر</p>         
             @else
