@@ -59,17 +59,19 @@
                             <p>
                             عدد الاصناف {{$cart->totalQty}}
                             </p>
-                            <a href="
-                            https://wa.me//966{{$about->number}}?text=الصنف : 
+                            <a  target="_blank"  href="
+                            https://wa.me//966{{$about->number}}?text=الطلبات :
                             %20 
                             @foreach($cart->items as $menu)
-                            {{$menu['name']}} %20 
+                            {{$menu['qty']}}  |  {{$menu['name']}}
+                            %20 
                             {{$menu['price']}} ريال  
+                            ________________________
                             @endforeach
                             %20 
-                            الاجمالي ${{$cart->totalPrice}}
+                            *الاجمالي : {{$cart->totalPrice}}  ريال*
                             %20 
-                            عدد الاصناف {{$cart->totalQty}}
+                            *عدد الاصناف {{$cart->totalQty}}*
                             %20 
                             " class="btn btn-info">اتمام الطلب</a>
                         </div>
