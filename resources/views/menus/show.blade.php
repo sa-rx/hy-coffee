@@ -11,11 +11,9 @@
 
             <div class="section-title">
                 <h2>{{$menu->name}} </h2>
-                @if(isset($menu->offer_price))
-                        <span> {{$menu->price}} ريال   |   العرض {{$menu->offer_price}} ريال  </span>
-                        @else
+              
                         <span> {{$menu->price}} ريال</span>
-                    @endif
+                  
             </div>
             <h5>{!! nl2br( $menu->content )!!}</h5>
 
@@ -34,11 +32,9 @@
                                         <h4>غير متوفر</h4>
                                     @endif
 
-                                    @if(isset($menu->offer_price))
-                                        <span> {{$menu->price}} ريال   |   العرض {{$menu->offer_price}} ريال  </span>
-                                        @else
+                                   
                                         <span> {{$menu->price}} ريال</span>
-                                    @endif
+                                    
                                 </div>
                                 <div class="social">
                                     <a href="">{{$menu->calories}} سعره</a>

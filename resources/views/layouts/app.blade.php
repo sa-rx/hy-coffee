@@ -132,6 +132,11 @@
         </nav>
       <!-- .navbar -->
     </div>
+                 <a  href="{{route('cart.show')}}" class="nav-link">
+                    <span style="color: #f7c795;" class="  fas fa-shopping-cart">
+                          طلباتي ( {{ session()->has('cart') ? session()->get('cart')->totalQty : '0'   }} )
+                    </span>
+                </a>
   </header><!-- End Header -->
        
     <br>
@@ -142,15 +147,7 @@
     <div id="app">
 
 
-        <nav class="navbar navbar-light bg-light container">
-            <div class="container-fluid">
-                <a href="{{route('cart.show')}}" class="nav-link">
-                    <span class="navbar-brand mb-0  fas fa-shopping-cart">
-                          My Cart ( {{ session()->has('cart') ? session()->get('cart')->totalQty : '0'   }} )
-                    </span>
-                </a>
-            </div>
-        </nav>
+      
 
 
         <main class="py-4">

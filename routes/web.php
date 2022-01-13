@@ -24,6 +24,8 @@ Route::get('controls', [App\Http\Controllers\ControlPanelController::class, 'ind
 
 Route::get('addToCart/{menu}', [App\Http\Controllers\MenuController::class, 'addToCart'])->name('cart.add');
 Route::get('shopping-cart', [App\Http\Controllers\MenuController::class, 'showCart'])->name('cart.show');
+Route::delete('remove-cart/{menu}', [App\Http\Controllers\MenuController::class, 'removeToCart'])->name('cart.remove');
+Route::put('update-cart/{menu}', [App\Http\Controllers\MenuController::class, 'updateToCart'])->name('cart.update');
 
 
 //Route::group(['middleware' => ['auth']], function() {

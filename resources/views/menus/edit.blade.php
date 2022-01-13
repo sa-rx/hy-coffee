@@ -23,11 +23,7 @@
                             <input type="text" name="img_url" class="form-control" @isset($menu) value="{{$menu->img_url}}" @endisset>
                         </div>
 
-                        <div class="form-group">
-                            <label for="price">سعر الصنف</label>
-                            <input type="text" name="price" class="form-control"  @isset($menu) value="{{$menu->price}}" @endisset>
-                        </div>
-
+                      
                         <div class="form-group">
                             <label for="offer_price">سعر العرض </label>
                             <input type="text" name="offer_price" class="form-control"  @isset($menu) value="{{$menu->offer_price}}" @endisset>

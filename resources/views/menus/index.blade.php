@@ -30,11 +30,9 @@
 
                     <td ><a class="text-light" href="{{route('menu.show',$menu)}}">{{$menu->name}}</a></td>
 
-                    @if(isset($menu->offer_price))
-                    <td><s class="text-danger">{{$menu->price}}</s> <b class="text-dark"></b>{{$menu->offer_price}}</td>
-                    @else
+                   
                     <td>{{$menu->price}}</td>
-                    @endif
+                  
 
                     @if(isset($menu->calories))
                     <td>{{$menu->calories}}</td>

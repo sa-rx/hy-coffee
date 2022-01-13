@@ -28,10 +28,7 @@
                             <input type="text" name="price" class="form-control">
                         </div>
 
-                        <div class="form-group">
-                            <label for="offer_price">سعر العرض </label>
-                            <input type="text" name="offer_price" class="form-control">
-                        </div>
+                      
 
                         <div class="form-group">
                             <label for="calories">السعرات </label>

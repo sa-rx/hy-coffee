@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\About;
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -152,6 +154,9 @@ class MenuController extends Controller
 
     public function showCart()
     {
+        $about = About::find(1);
+
+
         if(session()->has('cart')){
             $cart = new Cart(session()->get('cart'));
         }else{
@@ -159,11 +164,37 @@ class MenuController extends Controller
         }
 
 
-        return view('cart.show', compact('cart'));
-
-
-        
+        return view('cart.show', compact('cart','about'));
     }
+
+    public function removeToCart(Menu $menu)
+    {
+        $cart = new Cart(session()->get('cart'));
+        $cart->remove($menu->id);
+
+        if($cart->totalQty <= 0 ){
+            session()->forget('cart');
+        }else{
+            session()->put('cart', $cart);
+        }
+       
+
+        return redirect()->to('shopping-cart')->with('message','تم حذف الصنف بنجاح');
+    }
+
+
+    public function updateToCart(Request $request, Menu $menu)
+    {
+        $request->validate([
+            'qty' => 'required|numeric|min:1'
+        ]);
+
+        $cart = new Cart(session()->get('cart'));
+        $cart->updateQty($menu->id, $request->qty);
+        session()->put('cart', $cart);
+        return redirect()->to('shopping-cart')->with('success', 'Product updated');
+    }
+
 
 
 

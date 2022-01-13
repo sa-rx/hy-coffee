@@ -113,14 +113,12 @@
           <img src="{{$menu->img_url}}" class="menu-img" alt="">
           </a>
           <div class="menu-content">
-            @if(isset($menu->offer_price))
-              <a href="{{route('menu.show',$menu)}}">{{$menu->name}}</a><span><s class="text-danger">{{$menu->price}}</s> {{$menu->offer_price}} ريال </span>
-            @else
+            
               <a href="{{route('menu.show',$menu)}}">{{$menu->name}}</a><span>{{$menu->price}}ريال</span>
-            @endif
+           
           </div>
           <div class="menu-ingredients">
-            <a href="{{route('cart.add',$menu->id)}}" class="btn btn-danger"> bay</a>
+            <a href="{{route('cart.add',$menu->id)}}" class="btn btn btn-outline-light"> اطلب</a>
             @if($menu->available == 0)
               <p>غير متوفر</p>         
             @else

@@ -2,42 +2,56 @@
 
 @section('title', 'الفئات')
 
-@section('content')
+@section('content') 
+<section id="menu" class="menu container section-bg border border-dark rounded">
 
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <div class="row">
         @if($cart)
-
-            <div class="col-8">
+                
+            <div class="col-12 section-bg">
+                        <h3 class="card-titel">
+                            طلباتك
+                            
+                        </h3>
                 @foreach($cart->items as $menu)
-                    <div class="card section-bg mb-2">
-                        <div class="card-body">
+                    <div class="card  mb-2">
+                        <div class="card-body section-bg">
                             <h5 class="card-title">
                                 {{$menu['name']}}
                             </h5>
                             <div class="card-text">
                                 {{$menu['price']}} ريال
-                                <a href="#" class="btn btn-danger btn-sm ml-4">حذف</a>
-
+ 
                                 
-                                <input type="text" name="qty" id="qty" value={{$menu['qty']}}>
-                                <a href="#" class="btn btn-dark btn-sm ml-4">تعديل</a>
+                              
+                               
+                               
+                                <form action="{{ route('cart.update',$menu['id'])}}" method="post">
+                                    @csrf
+                                    @method('put')
+                                    <input type="number" name="qty" id="qty" value={{ $menu['qty']}}>
+                                    <button type="submit" class="btn btn-info btn-sm">تعديل الطلب</button>
+                                </form>
 
+                                <form action="{{route('cart.remove',$menu['id'])}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button tybe="submit" class="btn btn-danger btn-sm ml-4">حذف الطلب</button>
+
+                                </form>
                             </div>
                         </div>
                     </div>
                 @endforeach
                 <p><strong>الاجمالي : ${{$cart->totalPrice}}</strong></p>
 
-            </div>
+            
 
-            <div class="col-4">
+            
                 <div class="card section-bg text-white">
                     <div class="card-body">
-                        <h3 class="card-titel">
-                            طلباتك
-                            <hr>    
-                        </h3>
+                       
                         <div class="card-text">
                             <p>
                             الاجمالي ${{$cart->totalPrice}}
@@ -46,7 +60,7 @@
                             عدد الاصناف {{$cart->totalQty}}
                             </p>
                             <a href="
-                            https://wa.me//966559370994?text=الصنف : 
+                            https://wa.me//966{{$about->namber}}?text=الصنف : 
                             %20 
                             @foreach($cart->items as $menu)
                             {{$menu['name']}} %20 
@@ -61,13 +75,14 @@
                         </div>
                     </div>
                 </div>
-          
             </div>
+            
         @else 
-            <p>hgf</p>   
+            <p>لا توجد لديك اي طلبات</p>   
         @endif    
       </div>
     </div>
 
+    </section><!-- End Menu Section -->
 
 @endsection
