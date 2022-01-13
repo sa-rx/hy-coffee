@@ -60,7 +60,7 @@
                             عدد الاصناف {{$cart->totalQty}}
                             </p>
                             <a href="
-                            https://wa.me//966{{$about->namber}}?text=الصنف : 
+                            https://wa.me//966{{$about->number}}?text=الصنف : 
                             %20 
                             @foreach($cart->items as $menu)
                             {{$menu['name']}} %20 
