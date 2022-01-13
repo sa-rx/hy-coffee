@@ -64,7 +64,7 @@
                             %20 
                             @foreach($cart->items as $menu)
                             {{$menu['name']}} %20 
-                            {{$menu['price']}} ريال %20 
+                            {{$menu['price']}} ريال  
                             @endforeach
                             %20 
                             الاجمالي ${{$cart->totalPrice}}
