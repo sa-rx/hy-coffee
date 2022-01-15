@@ -14,6 +14,8 @@
                             طلباتك
                             
                         </h3>
+                        <p class="text-warning">  ملاحظه : سيتم تحويل الطلب على الواتس <b> وليس دفع الكتروني</b></p>
+                       
                 @foreach($cart->items as $menu)
                     <div class="card  mb-2">
                         <div class="card-body section-bg">
