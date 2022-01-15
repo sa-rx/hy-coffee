@@ -61,6 +61,25 @@
                 <p class="fst-italic">
                   {!! nl2br( $offer->content )!!}
                 </p>
+                <a  target="_blank"  href="
+                            https://wa.me//966{{$about->number}}?text=الطلبات :
+                            %20 
+                            {{$offer->title}}
+                           
+                            %20 
+                            @if(isset($offer->price))
+                             {{$offer->price}} ريال
+                            @else
+                            
+                            @endif
+                           
+                           
+                            %20 
+                            {!! nl2br( $offer->content )!!}
+                            %20 
+                           
+                            %20 
+                            " class="btn btn btn-outline-light">اطلب العرض </a>
               </div>
             </div>
          
@@ -118,10 +137,11 @@
            
           </div>
           <div class="menu-ingredients">
-            <a href="{{route('cart.add',$menu->id)}}" class="btn btn btn-outline-light"> اطلب</a>
+          
             @if($menu->available == 0)
               <p>غير متوفر</p>         
             @else
+            <a href="{{route('cart.add',$menu->id)}}" class="btn btn btn-outline-light"> اضف للطلباتي</a>
             @endif
           </div>
             <br>

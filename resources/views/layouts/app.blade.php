@@ -94,17 +94,11 @@
                     <a class="nav-link" href="{{ route('controls.index') }}">لوحة التحكم</a>
             </li>
             @endcan
-
+            
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}"> تسجيل دخول</a>
                         </li>
                     @endif
                 @else
@@ -132,11 +126,13 @@
         </nav>
       <!-- .navbar -->
     </div>
-                 <a  href="{{route('cart.show')}}" class="nav-link">
-                    <span style="color: #f7c795;" class="  fas fa-shopping-cart">
-                          طلباتي ( {{ session()->has('cart') ? session()->get('cart')->totalQty : '0'   }} )
-                    </span>
-                </a>
+                <div style="margin: 0 0 0 15px;" >
+                    <a  href="{{route('cart.show')}}" style="background-color: #cf9c65;" class="nav-link btn btn-dark btn-sm">
+                        <span style="color: #000000;" class="  fas fa-shopping-cart">
+                            طلباتي <b> {{ session()->has('cart') ? session()->get('cart')->totalQty : '0'   }}  </b>
+                        </span>
+                    </a>
+                </div>
   </header><!-- End Header -->
        
     <br>

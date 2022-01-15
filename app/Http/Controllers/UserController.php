@@ -11,10 +11,10 @@ class UserController extends Controller
 
     function __construct()
     {
-        //$this->middleware('permission:صلاحيات المستخدمين|المستخدمين', ['only' => ['index','store']]);
-       // $this->middleware('permission:صلاحيات المستخدمين|اضافة مستخدم', ['only' => ['create','store']]);
-       // $this->middleware('permission:تعديل مستخدم', ['only' => ['edit','update']]);
-       // $this->middleware('permission:حذف مستخدم', ['only' => ['destroy']]);
+        $this->middleware('permission:صلاحيات المستخدمين|المستخدمين', ['only' => ['index','store']]);
+        $this->middleware('permission:صلاحيات المستخدمين|اضافة مستخدم', ['only' => ['create','store']]);
+        $this->middleware('permission:تعديل مستخدم', ['only' => ['edit','update']]);
+        $this->middleware('permission:حذف مستخدم', ['only' => ['destroy']]);
     }
 
     
