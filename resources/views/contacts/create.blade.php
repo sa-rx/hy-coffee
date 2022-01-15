@@ -16,39 +16,39 @@
                         <a href="#demo" data-toggle="collapse">
                             <h1  class="text-center  "><button  style=" color: #d8a781;  border-color: #d8a781; "  class="btn  btn-outline-light btn-lg">   <i class="fas fa-phone-square fa-2x"></i> </button>  </h1>
                         </a>
-                        <div id="demo" class="collapse">
+                        
                             <p class="text-center" >{{$about->number}}  </p>
-                        </div>
+                        
                     </div>
 
                     <div class="col-md-3">
-                        <a href="#demo" data-toggle="collapse">
+                        <a href="https://www.instagram.com/{{$about->inst}}" >
                             <h1 class="text-center  ">  <button style=" color: #d8a781;  border-color: #d8a781" class="btn  btn-outline-light btn-lg">  <i class="fab fa-instagram fa-2x"></i>   </button> </h1>
                         </a>
-                        <div id="demo" class="collapse">
+                        
                             <p class="text-center"><a   target="_blank" class="text-center " href="https://www.instagram.com/{{$about->inst}}">  {{$about->inst}}   </a> </p>
-                        </div>
+                        
                     </div>
 
 
                     <div class="col-md-3">
-                        <a href="#demo" data-toggle="collapse">
+                        <a href="http://story.snapchat.com/u/{{$about->snap}}">
                            <h1 class="text-center  text-secondary">  <button style=" color: #d8a781;  border-color: #d8a781" class="btn  btn-outline-light btn-lg">  <i class="fab fa-snapchat fa-2x"></i>  </button>   </h1>
                         </a>
-                        <div id="demo" class="collapse">
+                       
                             <p class="text-center"><a  target="_blank" class="text-center "  href="http://story.snapchat.com/u/{{$about->snap}}"> {{$about->snap}}</a></p>
-                        </div>
+                       
                      </div>
 
 
                     <div class="col-sm-3">
-                        <a href="#demo" data-toggle="collapse">
+                        <a href="{{$about->location}}" >
                             <h1 class="text-center  text-secondary">  <button style=" color: #d8a781;  border-color: #d8a781" class="btn  btn-outline-light btn-lg">   <i class="fas fa-map-marker-alt fa-2x"></i>   </button>   </h1>
                         </a>
-                        <div id="demo" class="collapse">
+                       
                             <p class="text-center">{{$about->address}}</p>
                             <p class="text-center"><a   target="_blank" class="text-center  " href="{{$about->location}}">موقع المقهى</a></p>
-                        </div>
+                       
                     </div>
             </div>
                 <br><br><br>

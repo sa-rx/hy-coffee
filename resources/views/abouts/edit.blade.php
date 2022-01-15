@@ -29,7 +29,7 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label for="location">الموقع </label>
+                                <label for="location"> رابط الموقع </label>
                                 <input type="text" name="location" class="form-control"  @isset($about) value="{{$about->location}}" @endisset>
                             </div>
 
