@@ -45,9 +45,9 @@
         <h2>العروض</h2>
       </div>
       <div class="swiper-wrapper ">
-      <div class="swiper-slide ">
+     
         @forelse($offers as $offer)
-         
+        <div class="swiper-slide ">
             <div class="row event-item" >
               <div class=" content " style="margin: 11px 30px 0 0;">
                 <h3>{{$offer->title}}</h3>
@@ -82,11 +82,11 @@
                             " class="btn btn btn-outline-light">اطلب العرض </a>
               </div>
             </div>
-         
+            </div><!-- End testimonial item -->
         @empty
             <p>لا توجد عروض</p>
         @endforelse    
-        </div><!-- End testimonial item -->
+       
       </div>
       <div class="swiper-pagination"></div>
     </div>

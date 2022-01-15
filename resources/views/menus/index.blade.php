@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-xl-12 mx-auto container">
+<div class="col-xl-12 mx-auto container  section-bg">
         <a  class=" btn btn-outline-light mx-auto mb-2" href="{{route('menu.create')}}"><i class="fas fa-plus-square"></i>  اضافة اصناف </a>
     <table style="--bs-table-hover-color: #d8a781 ;     border-color: #1e252c00;" class="table section-bg rounded table-responsive-xxl table-hover  text-light ">
         <thead  class="">

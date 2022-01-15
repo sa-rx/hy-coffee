@@ -38,7 +38,7 @@
                             <label for="available">متوفر؟</label>
                                 <select class="form-select" aria-label="Default select example"  name="available" id="1" @isset($menu) value="{{$menu->available}}" @endisset>>
                                     <option value="1" {{old('available',$menu->available)=="1"? 'selected':''}}  value="$menu->available">متوفر</option>            
-                                    <option value="0" {{old('available',$menu->available)=="0"? 'selected':''}}  value="$menu->available">متوفرغير</option>
+                                    <option value="0" {{old('available',$menu->available)=="0"? 'selected':''}}  value="$menu->available">غير متوفر</option>
                                 </select>
                         </div>
 
@@ -61,7 +61,7 @@
 
                                             
                         <div class="form-group">
-                            <button class="btn btn-outline-light"> <i class="fas fa-plus-square"></i> اضافة </button>
+                            <button class="btn btn-outline-light"> <i class="fas fa-plus-square"></i> تعديل </button>
                         </div>
 
                     </form>

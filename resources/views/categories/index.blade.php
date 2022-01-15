@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container  section-bg">
        <a  class="btn btn-outline-light mx-auto mb-2" href="{{route('categories.create')}}"><i class="fas fa-plus-square"></i>  اضافة فئه </a>
     <div class="row">
         <div class="col-xl-9 mx-auto">

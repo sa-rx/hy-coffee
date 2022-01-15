@@ -17,7 +17,7 @@
             @forelse($category->menus as $menu)
                 <div  class="col-lg-6 menu-item   filter-{{$menu->category->name}}">
                     <div class="menu-content">
-                        <a href="#">{{$menu->name}}</a><span>${{$menu->price}}</span>
+                        <a href="{{route('menu.show',$menu)}}">{{$menu->name}}</a><span>${{$menu->price}}</span>
                     </div>
 
                     <div class="menu-ingredients">

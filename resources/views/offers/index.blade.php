@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container  section-bg">
         <a  class="btn btn-outline-light mx-auto mb-2" href="{{route('offers.create')}}"><i class="fas fa-plus-square"></i>  اضافة عرض </a>   
     <table style="--bs-table-hover-color: #d8a781 ; border-color: #1e252c00;" class="table section-bg   table-hover text-light ">
         <thead  class="">
