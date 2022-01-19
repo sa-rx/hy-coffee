@@ -93,6 +93,8 @@
             <li class="nav-item">
                     <a class="nav-link" href="{{ route('controls.index') }}">لوحة التحكم</a>
             </li>
+            <li><a class="nav-link scrollto" href="{{ route('orders.index') }}">الطلبات</a></li>
+
             @endcan
             
                 @guest
