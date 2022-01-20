@@ -28,7 +28,7 @@ class OrderController extends Controller
         
 
         $orderStatus = Order::whereStatus('1')->orderBy('id','DESC')->get();
-        $orderStatusTotal_price = Order::whereStatus('1')->sum('total_price');
+        $orderStatusTotal_price = Order::whereStatus('1')->sum('total_price')->setKeyType('string');
 
         $orderDates = Order::whereDate('created_at', Carbon::today())->get();
 
