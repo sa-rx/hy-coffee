@@ -94,7 +94,7 @@
         <div   class="col-lg-12 menu-item filter-orderStatus" >
             <p>المدفوع</p>
             <div class="col-xl-12 mx-auto container  section-bg">
-               <!-- <h4>{{$orderStatusTotal_price}}</h4> -->
+              
                 <table style="--bs-table-hover-color: #d8a781 ;     border-color: #1e252c00;" class="table section-bg rounded table-responsive-xxl table-hover  text-light ">
                     <thead  class="">
                         <tr>
