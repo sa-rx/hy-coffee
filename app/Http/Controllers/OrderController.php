@@ -31,8 +31,8 @@ class OrderController extends Controller
 
         //$orderMonths = Order::whereCreated_at('created_at', Carbon::now()->month())->get();
 
-        
-        return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths','orderStatusTotal_price'));
+        return view('orders.index',compact('orders','orderStatus','orderDates'));
+       // return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths','orderStatusTotal_price'));
     }
 
     /**
