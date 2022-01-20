@@ -12,6 +12,8 @@ class Order extends Model
         'total_price',
         'total_qty'
     ];
+    public $keyType = 'string';
+
 
     use HasFactory;
 }
