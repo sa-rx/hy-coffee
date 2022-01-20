@@ -25,13 +25,14 @@ class OrderController extends Controller
         
 
         $orderStatus = Order::whereStatus('1')->orderBy('id','DESC')->get();
+        $orderStatusTotal_price = Order::whereStatus('1')->sum('total_price');
 
         $orderDates = Order::whereDate('created_at', Carbon::today())->get();
 
-        $orderMonths = Order::whereCreated_at('created_at', Carbon::now()->month())->get();
+        //$orderMonths = Order::whereCreated_at('created_at', Carbon::now()->month())->get();
 
         
-        return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths'));
+        return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths','orderStatusTotal_price'));
     }
 
     /**
