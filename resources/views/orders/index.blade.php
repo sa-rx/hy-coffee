@@ -54,7 +54,7 @@
                             <tr>
                                 <td>{{$order->id}}</td>
                                 <td >
-                                    <a class="text-light" href="{{route('orders.show',$order)}}">{{$order->cart}}</a>
+                                    <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{{$order->cart}}</a>
                                 </td>
                                 <td>{{$order->total_qty}}</td>
                                 <td>${{$order->total_price}}</td>
@@ -113,7 +113,7 @@
                             <tr>
                                 <td>{{$orderStatu->id}}</td>
                                 <td >
-                                    <a class="text-light" href="{{route('orders.show',$order)}}">{{$orderStatu->cart}}</a>
+                                    <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{{$orderStatu->cart}}</a>
                                 </td>
                                 <td>{{$orderStatu->total_qty}}</td>
                                 <td>${{$orderStatu->total_price}}</td>
@@ -166,7 +166,7 @@
                             <tr>
                                 <td>{{$orderDate->id}}</td>
                                 <td >
-                                    <a class="text-light" href="{{route('orders.show',$order)}}">{{$orderDate->cart}}</a>
+                                    <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{{$orderDate->cart}}</a>
                                 </td>
                                 <td>{{$orderDate->total_qty}}</td>
                                 <td>${{$orderDate->total_price}}</td>
@@ -221,11 +221,11 @@
                             <tr>
                                 <td>{{$orderMonth->id}}</td>
                                 <td >
-                                    <a class="text-light" href="{{route('orders.show',$order)}}">{{$orderMonth->cart}}</a>
+                                    <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{{$orderMonth->cart}}</a>
                                 </td>
                                 <td>{{$orderMonth->total_qty}}</td>
                                 <td>${{$orderMonth->total_price}}</td>
-                                <td>${{$orderMonth->created_at}}</td>
+                                <td>{{$orderMonth->created_at}}</td>
                                 
                                 <td>
                                     @if($orderMonth->status == 1)

@@ -26,6 +26,7 @@
         </div>
         @if( $order->status == 1)
         <button onclick="window.print();" class="noPrint">طباعه</button>
+       
         @else
         @endif
     </section><!-- End Chefs Section -->
