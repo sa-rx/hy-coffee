@@ -8,7 +8,7 @@
        <a  class="btn btn-outline-light mx-auto mb-2" href="{{route('categories.create')}}"><i class="fas fa-plus-square"></i>  اضافة فئه </a>
     <div class="row">
         <div class="col-xl-9 mx-auto">
-            <div class="cta-inner bg-faded text-center rounded">
+            <div class="cta-inner bg-faded text-center rounded table-responsive">
                 <table  style="--bs-table-hover-color: #d8a781 ;     border-color: #1e252c00;" class="table section-bg table-striped  table-hover  text-light">
 
                     <thead  class="">

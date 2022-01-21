@@ -2,7 +2,7 @@
 @section('title', ' ادوار المستخدمين')
 
 @section('content')
-<div class="container section-bg border border-dark rounded">
+<div class="container section-bg border border-dark rounded table-responsive">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">

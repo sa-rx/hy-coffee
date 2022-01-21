@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container table-responsive">
 
     <table  style="--bs-table-hover-color: #d8a781 ; border-color: #1e252c00;" class="table  section-bg table-hover  text-light">
         <thead  class="">
