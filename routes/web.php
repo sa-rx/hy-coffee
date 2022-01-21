@@ -28,6 +28,9 @@ Route::delete('remove-cart/{menu}', [App\Http\Controllers\MenuController::class,
 Route::put('update-cart/{menu}', [App\Http\Controllers\MenuController::class, 'updateToCart'])->name('cart.update');
 
 
+Route::get('archive-orders/{date}', [App\Http\Controllers\OrderController::class, 'archiveOrders'])->name('orders.archive');
+
+
 //Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles','App\Http\Controllers\RoleController');
     Route::resource('users','App\Http\Controllers\UserController');

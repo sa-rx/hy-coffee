@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
 
 
 class OrderController extends Controller
@@ -16,26 +18,28 @@ class OrderController extends Controller
      */
     public function index()
     {
-
-        
-
-        $now = Carbon::now();
-        echo $now->year;
-        echo $now->month;
-        echo $now->weekOfYear;
-        
         $orders = Order::orderBy('id','DESC')->get();
-        
 
-        $orderStatus = Order::whereStatus('1')->orderBy('id','DESC')->get();
-        $orderStatusTotal_price = Order::whereStatus('1')->sum('total_price');
+        $orders_archives = Order::orderBy('created_at','DESC')
+            ->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
+            ->pluck('year','month')->toArray();
+            //dd($orders_archives);
+        return view('orders.index',compact('orders','orders_archives'));
 
-        $orderDates = Order::whereDate('created_at', Carbon::today())->get();
+        //$now = Carbon::now();
+        //echo $now->year;
+        //echo $now->month;
+        //echo $now->weekOfYear;
 
-        $orderMonths = Order::whereStatus('1')->whereMonth('created_at',$now->month)->get();
+        //$orderStatus = Order::whereStatus('1')->orderBy('id','DESC')->get();
+       // $orderStatusTotal_price = Order::whereStatus('1')->sum('total_price');
+
+        //$orderDates = Order::whereDate('created_at', Carbon::today())->get();
+
+        //$orderMonths = Order::whereStatus('1')->whereMonth('created_at',$now->month)->get();
 
         //return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths'));
-        return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths','orderStatusTotal_price'));
+        //return view('orders.index',compact('orders','orderStatus','orderDates','orderMonths','orderStatusTotal_price'));
     }
 
     /**
@@ -110,4 +114,29 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->to('orders')->with('message','تمت الحذف بنجاح');
     }
+
+
+    public function archiveOrders($date)
+    {
+        //$now = Carbon::now();
+        //echo $now->year;
+        //echo $now->month;
+        //echo $now->weekOfYear;
+
+        $exploded_date = explode('-', $date);
+        $month = $exploded_date[0];
+        $year = $exploded_date[1];
+        
+        $dates =  Order::whereStatus('1')
+                          //->whereMonth('created_at',$now->month)
+                          //->whereYear('created_at',$now->year)
+
+                          ->whereMonth('created_at', $month)
+                          ->whereYear('created_at', $year)                    
+                          ->orderBy('id','DESC')->get(); 
+                        
+       
+        return view('orders.archive',compact('dates'));
+    }
+
 }
