@@ -74,11 +74,7 @@
             </div>
         </div>
     </div>
-    <ul>
-        @foreach($orders_archives as $key => $val)
-        <li><a href="{{ route('orders.archive', $key.'-'.$val) }}">{{ date("F", mktime(0, 0, 0, $key, 1)) . ' ' . $val }}</a></li>
-        @endforeach
-    </ul>
+   
 </section><!-- End Menu Section -->
             
 
