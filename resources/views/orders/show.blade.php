@@ -7,6 +7,7 @@
 
             <div class="section-title">
                 <h2>رقم الطلب #{{$order->id}} </h2>
+                <p>وقت الطلب | {{$order->created_at}}</p>
             </div>
             <br>
             <h4>{!! nl2br( $order->cart )!!}</h4>

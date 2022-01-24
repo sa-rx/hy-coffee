@@ -38,7 +38,7 @@
                                 <tr>
                                     <td>{{$order->id}}</td>
                                     <td >
-                                        <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{{$order->cart}}</a>
+                                        <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{!! nl2br( $order->cart )!!}</a>
                                     </td>
                                     <td>{{$order->total_qty}}</td>
                                     <td>${{$order->total_price}}</td>
