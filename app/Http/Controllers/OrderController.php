@@ -20,8 +20,11 @@ class OrderController extends Controller
     {
         $orders = Order::orderBy('id','DESC')->get();
 
-      
-        return view('orders.index',compact('orders'));
+        $orders_archives = Order::distinct('created_at')
+            ->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
+            ->pluck('year','month')->toArray();
+            //dd($orders_archives);
+        return view('orders.index',compact('orders','orders_archives'));
 
         //$now = Carbon::now();
         //echo $now->year;
@@ -127,13 +130,22 @@ class OrderController extends Controller
         $dates =  Order::whereStatus('1')
                           //->whereMonth('created_at',$now->month)
                           //->whereYear('created_at',$now->year)
-
                           ->whereMonth('created_at', $month)
                           ->whereYear('created_at', $year)                    
                           ->orderBy('id','DESC')->get(); 
                         
-       
-        return view('orders.archive',compact('dates'));
+        $order_status_total_price = Order::whereMonth('created_at', $month)
+        ->whereYear('created_at', $year)->sum('total_price');
+
+        $order_status_total_order = Order::whereMonth('created_at', $month)
+        ->whereYear('created_at', $year)->count('id');
+
+        $order_status_total_qty = Order::whereMonth('created_at', $month)
+        ->whereYear('created_at', $year)->sum('total_qty');
+
+        
+
+        return view('orders.archive',compact('dates','order_status_total_price','order_status_total_order','order_status_total_qty'));
     }
 
 }

@@ -17,6 +17,14 @@
         <div class="section-title">
             <h2>الطلبات</h2>
         </div>
+
+        <div class="row">
+        
+            <p class="col-4">اجمالي الطلبات المدفوعه: {{$order_status_total_price}}</p>
+            <p class="col-4"> عدد الطلبات: {{$order_status_total_order}}</p>
+            <p class="col-4">عدد الاصناف: {{$order_status_total_qty}}</p>
+        </div>    
+
         <div class="row menu-container  rounded" data-aos="fade-up" data-aos-delay="200">
             <div   class="col-lg-12 menu-item " >
                 <div class="col-xl-12 mx-auto container  section-bg table-responsive">

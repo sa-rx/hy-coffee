@@ -38,7 +38,7 @@
                                 <tr>
                                     <td>{{$order->id}}</td>
                                     <td >
-                                        <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{!! nl2br( $order->cart )!!}</a>
+                                        <a target="_blank" class="text-light" href="{{route('orders.show',$order)}}">{{$order->cart}}</a>
                                     </td>
                                     <td>{{$order->total_qty}}</td>
                                     <td>${{$order->total_price}}</td>
@@ -74,7 +74,11 @@
             </div>
         </div>
     </div>
-   
+    <ul>
+        @foreach($orders_archives as $key => $val)
+        <li><a href="{{ route('orders.archive', $key.'-'.$val) }}">{{ date("F", mktime(0, 0, 0, $key, 1)) . ' ' . $val }}</a></li>
+        @endforeach
+    </ul>
 </section><!-- End Menu Section -->
             
 
