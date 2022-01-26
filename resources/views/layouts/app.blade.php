@@ -90,11 +90,13 @@
             <li><a class="nav-link scrollto" href="{{ route('opinions.create') }}">الاراء</a></li>
 
             @can('لوحة التحكم')
-            <li class="nav-item">
-                    <a class="nav-link" href="{{ route('controls.index') }}">لوحة التحكم</a>
-            </li>
-            <li><a class="nav-link scrollto" href="{{ route('orders.index') }}">الطلبات</a></li>
-
+                <li class="nav-item">
+                        <a class="nav-link" href="{{ route('controls.index') }}">لوحة التحكم</a>
+                </li>
+            @endcan
+            
+            @can('الطلبات')
+                <li><a class="nav-link scrollto" href="{{ route('orders.index') }}">الطلبات</a></li>
             @endcan
             
                 @guest

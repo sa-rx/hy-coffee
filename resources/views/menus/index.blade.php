@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-xl-12 mx-auto container  section-bg table-responsive">
-        <a  class=" btn btn-outline-light mx-auto mb-2" href="{{route('menu.create')}}"><i class="fas fa-plus-square"></i>  اضافة اصناف </a>
+    @can('اضافة صنف')<a  class=" btn btn-outline-light mx-auto mb-2" href="{{route('menu.create')}}"><i class="fas fa-plus-square"></i>  اضافة اصناف </a>  @endcan
     <table style="--bs-table-hover-color: #d8a781 ;     border-color: #1e252c00;" class="table section-bg rounded  table-hover  text-light ">
         <thead  class="">
             <tr>
@@ -49,8 +49,10 @@
                     @else
                     <td class="ms-auto">غير متوفر</td> 
                     @endif
+                    @can('تعديل صنف')
                     <td> <a class="btn btn-outline-primary" href="{{route('menu.edit',$menu)}}">  <i class="fas fa-pen-square"></i></a> </td>
-                   
+                    @endcan
+                    @can('حذف صنف')
                     <td>
                         <form method="post" action="{{route('menu.destroy',$menu)}}">
                             @method('delete')
@@ -58,6 +60,7 @@
                             <button onclick="return confirm('هل انت متأكد؟')" class="btn btn-outline-danger" > <i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
+                    @endcan
                 </tr>
             @empty
              <p>لا توجد حجوزات</p>

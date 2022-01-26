@@ -48,7 +48,10 @@
                                              <p class="mb-0">{!! nl2br( $about->content )!!}</p>
                                         </div>
                                    </div>
+                                        @can('تعديل صفحة عن الكافيه')
                                         <p class="mb-0">   <a class="btn  btn-outline-light" href="{{route('abouts.edit',$about)}}">تعديل  </a>  </p>
+                                        @endcan
+                                        
                               </div>
                          </div>
                     @empty

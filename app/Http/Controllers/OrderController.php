@@ -18,6 +18,8 @@ class OrderController extends Controller
         $this->middleware('permission:اظهار طلب', ['only' => ['show']]);
         $this->middleware('permission:تعديل طلب', ['only' => ['edit','update']]);
         $this->middleware('permission:حذف طلب', ['only' => ['destroy']]);
+        $this->middleware('permission:اظهار طلب', ['only' => ['archiveOrders']]);
+
     }
     /**
      * Display a listing of the resource.
@@ -28,27 +30,32 @@ class OrderController extends Controller
     {
         $orders = Order::orderBy('id','DESC')->get();
 
+        //       mySql
         //$orders_archives = Order::distinct('created_at')
         //->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
         //->pluck('year','month')->toArray();
 
 
-            //PostgreSQL
-            //PostgreSQL
-            //PostgreSQL
+        
+        $now = Carbon::now();
+        $orderDates = Order::whereDate('created_at', Carbon::today())
+        ->whereStatus('1')->orderBy('id','DESC')->get();
 
+        $order_status_total_price = Order::whereDate('created_at', Carbon::today())
+        ->whereStatus('1')->orderBy('id','DESC')->sum('total_price');
+
+        $order_status_total_qty = Order::whereDate('created_at', Carbon::today())
+        ->whereStatus('1')->orderBy('id','DESC')->sum('total_qty');
+
+        $order_status_total_order = Order::whereDate('created_at', Carbon::today())
+        ->whereStatus('1')->orderBy('id','DESC')->count('id');
+
+        //PostgreSQL
         $orders_archives = Order::distinct('created_at')
         ->select(DB::raw("date_part('year', created_at) as year"), DB::raw("date_part('month', created_at) as month"))
         ->pluck('year','month')->toArray();
-        //dd($orders_archives);
             
-            //PostgreSQL
-            //PostgreSQL
-            //PostgreSQL
-
-
-
-        return view('orders.index',compact('orders','orders_archives'));
+        return view('orders.index',compact('orders','orders_archives','orderDates','order_status_total_price','order_status_total_qty','order_status_total_order'));
 
         //$now = Carbon::now();
         //echo $now->year;

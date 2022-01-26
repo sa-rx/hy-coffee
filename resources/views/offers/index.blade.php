@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container  section-bg table-responsive">
-        <a  class="btn btn-outline-light mx-auto mb-2" href="{{route('offers.create')}}"><i class="fas fa-plus-square"></i>  اضافة عرض </a>   
+  @can('اضافة عرض')<a  class="btn btn-outline-light mx-auto mb-2" href="{{route('offers.create')}}"><i class="fas fa-plus-square"></i>  اضافة عرض </a>  @endcan  
     <table style="--bs-table-hover-color: #d8a781 ; border-color: #1e252c00;" class="table section-bg   table-hover text-light ">
         <thead  class="">
             <tr>                            
@@ -28,9 +28,10 @@
                         @else
                             <td class="ms-auto">غير متوفر</td> 
                         @endif
-
+                    @can('تعديل عرض')
                     <td> <a class="btn btn-outline-primary" href="{{route('offers.edit',$offer)}}"><i class="fas fa-pen-square"></i>  </a> </td>
-
+                    @endcan
+                    @can('حذف عرض')
                     <td>
                         <form method="post" action="{{route('offers.destroy',$offer)}}"href="">
                             @method('delete')
@@ -38,6 +39,7 @@
                             <button onclick="return confirm('هل انت متأكد؟')" class="btn btn-outline-danger" > <i class="fas fa-trash-alt"></i></button>
                         </form>
                     </td>
+                    @endcan
                 </tr>
 
             @empty

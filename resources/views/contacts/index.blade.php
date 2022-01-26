@@ -19,9 +19,12 @@
         <tbody>
             @forelse($contacts as $contact)
                 <tr>
+                @can('عرض الرسايل  في صفحة تواصل معنا')
                     <td><a class="" href="{{route('contacts.show',$contact)}}"> {{$contact->name}}</a></td>
+                    @endcan      
                     <td>{{$contact->email}}</td>
                     <td>{{$contact->content}}</td>
+                    @can('حذف الرسايل في صفحة تواصل معنا')
                     <td>
                     
                         <form method="post" action="{{route('contacts.destroy',$contact)}}"href="">
@@ -31,6 +34,7 @@
                         </form>
 
                     </td>
+                    @endcan   
                 </tr>
             @empty
                 <p>لا توجد رسايل</p>

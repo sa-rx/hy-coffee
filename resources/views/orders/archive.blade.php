@@ -50,7 +50,7 @@
                                 <tr>
                                     <td>{{$date->id}}</td>
                                     <td >
-                                        <a target="_blank" class="text-light" href="{{route('orders.show',$date)}}">{{$date->cart}}</a>
+                                        <a target="_blank" class="text-light" href="{{route('orders.show',$date)}}"> {!! nl2br( $date->cart )!!}</a>
                                     </td>
                                     <td>{{$date->total_qty}}</td>
                                     <td>${{$date->total_price}}</td>

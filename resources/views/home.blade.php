@@ -126,19 +126,16 @@
     </div>
 
     <div class="row menu-container  rounded" data-aos="fade-up" data-aos-delay="200">
-
       @forelse($menus as $menu)
-
-
         <div   class="col-lg-6 menu-item filter-{{$menu->category_id}}" >
           <a href="{{route('menu.show',$menu)}}">
-          <img src="{{$menu->img_url}}" class="menu-img" alt="">
+            <img src="{{$menu->img_url}}" class="menu-img" alt="">
           </a>
+
           <div class="menu-content">
-            
               <a href="{{route('menu.show',$menu)}}">{{$menu->name}}</a><span>{{$menu->price}}ريال</span>
-           
           </div>
+          
           <div class="menu-ingredients">
           
             @if($menu->available == 0)
