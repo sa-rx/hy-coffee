@@ -32,11 +32,6 @@ class PermissionTableSeeder extends Seeder
             'عرض فئه',
 
 
-        'المنتجات',
-            'اضافة منتج',
-            'حذف منتج',
-            'تعديل منتج',
-            'عرض منتج',
 
 
 
