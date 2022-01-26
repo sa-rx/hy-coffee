@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:الطلبات', ['only' => ['index']]);
+        $this->middleware('permission:اظهار طلب', ['only' => ['show']]);
+        $this->middleware('permission:تعديل طلب', ['only' => ['edit','update']]);
+        $this->middleware('permission:حذف طلب', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,13 +28,23 @@ class OrderController extends Controller
     {
         $orders = Order::orderBy('id','DESC')->get();
 
-
-
-
         $orders_archives = Order::distinct('created_at')
-            ->select(DB::raw("date_part('year', created_at) as year"), DB::raw("date_part('month', created_at) as month"))
-            ->pluck('year','month')->toArray();
+        ->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
+        ->pluck('year','month')->toArray();
+
+
+            //PostgreSQL
+            //PostgreSQL
+            //PostgreSQL
+
+            //$orders_archives = Order::distinct('created_at')
+            //->select(DB::raw("date_part('year', created_at) as year"), DB::raw("date_part('month', created_at) as month"))
+            //->pluck('year','month')->toArray();
             //dd($orders_archives);
+            
+            //PostgreSQL
+            //PostgreSQL
+            //PostgreSQL
 
 
 

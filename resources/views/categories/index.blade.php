@@ -35,7 +35,7 @@
                             </tr>
 
                         @empty
-                            <p>لا توجد حجوزات</p>
+                            <p>لا توجد فئات</p>
                         @endforelse
                     </tbody>
                     

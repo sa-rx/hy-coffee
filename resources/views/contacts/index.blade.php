@@ -33,7 +33,7 @@
                     </td>
                 </tr>
             @empty
-                <p>لا توجد بيانات</p>
+                <p>لا توجد رسايل</p>
             @endforelse
         </tbody>
     </table>

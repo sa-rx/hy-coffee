@@ -45,52 +45,55 @@
         <h2>العروض</h2>
       </div>
       <div class="swiper-wrapper ">
-     
         @forelse($offers as $offer)
-        <div class="swiper-slide ">
+          <div class="swiper-slide ">
             <div class="row event-item" >
               <div class=" content " style="margin: 11px 30px 0 0;">
                 <h3>{{$offer->title}}</h3>
                 <div class="price">
-                @if(isset($offer->price))
-                  <p><span>{{$offer->price}} ريال</span></p>
-                @else
-                
-                @endif
+                  @if(isset($offer->price))
+                    <p><span>{{$offer->price}} ريال</span></p>
+                  @else
+                  
+                  @endif
                 </div>
                 <p class="fst-italic">
                   {!! nl2br( $offer->content )!!}
                 </p>
                 <a  target="_blank"  href="
-                            https://wa.me//966{{$about->number}}?text=الطلبات :
-                            %20 
-                            {{$offer->title}}
-                           
-                            %20 
-                            @if(isset($offer->price))
-                             {{$offer->price}} ريال
-                            @else
-                            
-                            @endif
-                           
-                           
-                            %20 
-                            {!! nl2br( $offer->content )!!}
-                            %20 
-                           
-                            %20 
-                            " class="btn btn btn-outline-light">اطلب العرض </a>
+                  https://wa.me//966{{$about->number}}?text=الطلبات :
+                  %20 
+                  {{$offer->title}}
+                  
+                  %20 
+                  @if(isset($offer->price))
+                    {{$offer->price}} ريال
+                  @else
+                  
+                  @endif
+                  
+                  
+                  %20 
+                  {!! nl2br( $offer->content )!!}
+                  %20 
+                  
+                  %20 
+                  " class="btn btn btn-outline-light">اطلب العرض </a>
               </div>
             </div>
-            </div><!-- End testimonial item -->
+          </div><!-- End testimonial item -->
         @empty
-            <p>لا توجد عروض</p>
+         <div class="swiper-slide ">
+            <div class="row event-item" >
+              <div class=" content " style="margin: 11px 30px 0 0;">
+                <h3>لا توجد عروض</h3>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
         @endforelse    
-       
       </div>
       <div class="swiper-pagination"></div>
     </div>
-
   </div>
 </section><!-- End Events Section -->
 

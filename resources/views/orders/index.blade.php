@@ -74,11 +74,20 @@
             </div>
         </div>
     </div>
-    <ul>
-        @foreach($orders_archives as $key => $val)
-        <li><a href="{{ route('orders.archive', $key.'-'.$val) }}">{{ date("F", mktime(0, 0, 0, $key, 1)) . ' ' . $val }}</a></li>
-        @endforeach
-    </ul>
+    <br>
+    <div>
+        <div class="section-title">
+                <h2>ارشيف الطلبات</h2>
+        </div>
+        <ul>
+            <div class="row">
+                @foreach($orders_archives as $key => $val)
+                <li  class="col-lg-3"><a href="{{ route('orders.archive', $key.'-'.$val) }}">{{ date("F", mktime(0, 0, 0, $key, 1)) . ' ' . $val }}</a></li>
+                @endforeach
+            </div>
+        </ul>
+    </div>
+   
 </section><!-- End Menu Section -->
             
 
