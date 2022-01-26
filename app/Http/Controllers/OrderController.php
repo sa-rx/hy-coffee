@@ -140,13 +140,13 @@ class OrderController extends Controller
                           ->whereYear('created_at', $year)                    
                           ->orderBy('id','DESC')->get(); 
                         
-        $order_status_total_price = Order::whereMonth('created_at', $month)
+        $order_status_total_price = Order::whereStatus('1')->whereMonth('created_at', $month)
         ->whereYear('created_at', $year)->sum('total_price');
 
-        $order_status_total_order = Order::whereMonth('created_at', $month)
+        $order_status_total_order = Order::whereStatus('1')->whereMonth('created_at', $month)
         ->whereYear('created_at', $year)->count('id');
 
-        $order_status_total_qty = Order::whereMonth('created_at', $month)
+        $order_status_total_qty = Order::whereStatus('1')->whereMonth('created_at', $month)
         ->whereYear('created_at', $year)->sum('total_qty');
 
         
