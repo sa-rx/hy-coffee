@@ -52,7 +52,7 @@
                               </div>
                          </div>
                     @empty
-                     <p>لا توجد حجوزات</p>
+                     <p>لا توجد بيانات</p>
                     @endforelse
                </div>
                <br>

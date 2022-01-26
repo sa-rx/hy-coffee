@@ -28,19 +28,19 @@ class OrderController extends Controller
     {
         $orders = Order::orderBy('id','DESC')->get();
 
+        //$orders_archives = Order::distinct('created_at')
+        //->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
+        //->pluck('year','month')->toArray();
+
+
+            //PostgreSQL
+            //PostgreSQL
+            //PostgreSQL
+
         $orders_archives = Order::distinct('created_at')
-        ->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
+        ->select(DB::raw("date_part('year', created_at) as year"), DB::raw("date_part('month', created_at) as month"))
         ->pluck('year','month')->toArray();
-
-
-            //PostgreSQL
-            //PostgreSQL
-            //PostgreSQL
-
-            //$orders_archives = Order::distinct('created_at')
-            //->select(DB::raw("date_part('year', created_at) as year"), DB::raw("date_part('month', created_at) as month"))
-            //->pluck('year','month')->toArray();
-            //dd($orders_archives);
+        //dd($orders_archives);
             
             //PostgreSQL
             //PostgreSQL

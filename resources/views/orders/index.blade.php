@@ -65,7 +65,7 @@
                                     </td>
                                 </tr>       
                             @empty
-                            <p>لا توجد حجوزات</p>
+                            <p>لا توجد طلبات</p>
                             @endforelse 
                         
                         </tbody>
