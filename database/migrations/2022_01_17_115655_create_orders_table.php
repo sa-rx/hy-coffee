@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->text('cart'); 
             $table->unsignedTinyInteger('total_price');
-            $table->string('total_qty');
+            $table->unsignedTinyInteger('total_qty');
             $table->unsignedTinyInteger('status')->default(0);
 
             $table->timestamps();
