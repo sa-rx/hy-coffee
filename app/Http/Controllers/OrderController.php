@@ -20,10 +20,16 @@ class OrderController extends Controller
     {
         $orders = Order::orderBy('id','DESC')->get();
 
+
+
+
         $orders_archives = Order::distinct('created_at')
-            ->select(DB::raw("Year(created_at) as year"), DB::raw("Month(created_at) as month"))
+            ->select(DB::raw("date_part('year', created_at) as year"), DB::raw("date_part('month', created_at) as month"))
             ->pluck('year','month')->toArray();
             //dd($orders_archives);
+
+
+
         return view('orders.index',compact('orders','orders_archives'));
 
         //$now = Carbon::now();
