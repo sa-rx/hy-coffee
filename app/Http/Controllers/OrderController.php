@@ -93,6 +93,7 @@ class OrderController extends Controller
     {
         $order = new Order();
         $order->create($request->all());
+        session()->forget('cart');
         return redirect()->to('/')->with('message','تم ارسال طلبك');
     }
 
