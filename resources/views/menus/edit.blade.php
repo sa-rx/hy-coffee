@@ -25,7 +25,7 @@
 
                       
                         <div class="form-group">
-                            <label for="price">سعر العرض </label>
+                            <label for="price">السعر  </label>
                             <input type="text" name="price" class="form-control"  @isset($menu) value="{{$menu->price}}" @endisset>
                         </div>
 
