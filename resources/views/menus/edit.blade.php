@@ -25,8 +25,8 @@
 
                       
                         <div class="form-group">
-                            <label for="offer_price">سعر العرض </label>
-                            <input type="text" name="offer_price" class="form-control"  @isset($menu) value="{{$menu->offer_price}}" @endisset>
+                            <label for="price">سعر العرض </label>
+                            <input type="text" name="price" class="form-control"  @isset($menu) value="{{$menu->price}}" @endisset>
                         </div>
 
                         <div class="form-group">

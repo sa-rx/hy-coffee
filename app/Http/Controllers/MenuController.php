@@ -32,10 +32,10 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menus = Menu::get();
+        $menus = Menu::orderBy('category_id','DESC')->get();
         return view('menus.index',compact('menus'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
